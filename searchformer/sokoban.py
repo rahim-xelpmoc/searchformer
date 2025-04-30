@@ -91,7 +91,7 @@ class CellState:
 
 
 class SokobanRenderer:
-    def __init__(self, width: int, height: int, record_dir: Optional[str]):
+    def __init__(self, width: int, height: int, record_dir: Optional[str]=None,assets_dir=""):
         """Constructs the PyGame renderer of a Sokoban level.
 
         Args:
@@ -103,62 +103,64 @@ class SokobanRenderer:
         self.screen = pygame.display.set_mode((width * 32, height * 32))
         self._record_dir = record_dir
         self._record_step = 0
+        self.assets_dir = assets_dir
 
     @functools.cached_property
     def floor_image(self) -> pygame.Surface:
-        fn = "sokoban/images/floor.png"
+        fn = os.path.join(self.assets_dir,"images", "floor.png")
+        # print(fn)
         assert os.path.exists(
             fn
         ), f"File {fn} not found. Maybe submodules were not initialized."
-        return pygame.image.load(fn)
+        return pygame.image.load(fn).convert_alpha()
 
     @functools.cached_property
     def wall_image(self) -> pygame.Surface:
-        fn = "sokoban/images/wall.png"
+        fn =os.path.join(self.assets_dir,"images", "wall.png")
         assert os.path.exists(
             fn
         ), f"File {fn} not found. Maybe submodules were not initialized."
-        return pygame.image.load(fn)
+        return pygame.image.load(fn).convert_alpha()
 
     @functools.cached_property
     def dock_image(self) -> pygame.Surface:
-        fn = "sokoban/images/dock.png"
+        fn =os.path.join(self.assets_dir,"images", "dock.png")
         assert os.path.exists(
             fn
         ), f"File {fn} not found. Maybe submodules were not initialized."
-        return pygame.image.load(fn)
+        return pygame.image.load(fn).convert_alpha()
 
     @functools.cached_property
     def box_image(self) -> pygame.Surface:
-        fn = "sokoban/images/box.png"
+        fn = os.path.join(self.assets_dir,"images", "box.png")
         assert os.path.exists(
             fn
         ), f"File {fn} not found. Maybe submodules were not initialized."
-        return pygame.image.load(fn)
+        return pygame.image.load(fn).convert_alpha()
 
     @functools.cached_property
     def box_on_dock_image(self) -> pygame.Surface:
-        fn = "sokoban/images/box_docked.png"
+        fn = os.path.join(self.assets_dir,"images", "box_docked.png")
         assert os.path.exists(
             fn
         ), f"File {fn} not found. Maybe submodules were not initialized."
-        return pygame.image.load(fn)
+        return pygame.image.load(fn).convert_alpha()
 
     @functools.cached_property
     def worker_on_floor_image(self) -> pygame.Surface:
-        fn = "sokoban/images/worker.png"
+        fn = os.path.join(self.assets_dir,"images", "worker.png")
         assert os.path.exists(
             fn
         ), f"File {fn} not found. Maybe submodules were not initialized."
-        return pygame.image.load(fn)
+        return pygame.image.load(fn).convert_alpha()
 
     @functools.cached_property
     def worker_on_dock_image(self) -> pygame.Surface:
-        fn = "sokoban/images/worker_dock.png"
+        fn = os.path.join(self.assets_dir,"images", "worker_dock.png")
         assert os.path.exists(
             fn
         ), f"File {fn} not found. Maybe submodules were not initialized."
-        return pygame.image.load(fn)
+        return pygame.image.load(fn).convert_alpha()
 
     def render(self, game_state: List[List[str]]):
         self.screen.fill((255, 226, 191))
@@ -181,6 +183,8 @@ class SokobanRenderer:
                 elif cell == CellState.worker_on_floor:
                     img = self.worker_on_floor_image
                 self.screen.blit(img, (x_pos, y_pos))
+                pygame.display.flip()
+        
 
     def img_to_file(self):
         assert (
@@ -867,28 +871,28 @@ class SokobanTraceDataset:
             name (str): Trace dataset name.
         """
         self.name = name
-        self.client = mongodb_client()
-        self.db = self.client[SOKOBAN_DB_NAME]
+        # self.client = mongodb_client()
+        # self.db = self.client[SOKOBAN_DB_NAME]
 
-    @functools.cached_property
-    def trace_collection(self) -> Collection:
-        return self.db[f"{self.name}.trace"]
+    # @functools.cached_property
+    # def trace_collection(self) -> Collection:
+    #     return self.db[f"{self.name}.trace"]
 
-    @functools.cached_property
-    def index_collection(self) -> Collection:
-        return self.db[f"{self.name}.index"]
+    # @functools.cached_property
+    # def index_collection(self) -> Collection:
+    #     return self.db[f"{self.name}.index"]
 
-    def drop(self):
-        self.db.drop_collection(self.trace_collection)
-        self.db.drop_collection(self.index_collection)
+    # def drop(self):
+    #     self.db.drop_collection(self.trace_collection)
+    #     self.db.drop_collection(self.index_collection)
 
-    def add(self, trace: SokobanTrace, is_test: bool):
-        self.trace_collection.insert_one(
-            {"_id": hash(trace), "is_test": is_test, "trace": trace.to_dict()},
-        )
-        self.index_collection.insert_one(
-            {"_id": hash(trace), "is_test": is_test},
-        )
+    # def add(self, trace: SokobanTrace, is_test: bool):
+    #     self.trace_collection.insert_one(
+    #         {"_id": hash(trace), "is_test": is_test, "trace": trace.to_dict()},
+    #     )
+    #     self.index_collection.insert_one(
+    #         {"_id": hash(trace), "is_test": is_test},
+    #     )
 
     def generate(
         self,
@@ -897,7 +901,7 @@ class SokobanTraceDataset:
         height: int,
         num_walls: int,
         num_boxes: int,
-    ) -> int:
+    ):
         """Randomly generates Sokoban task and adds trace into dataset.
 
         Args:
@@ -920,19 +924,20 @@ class SokobanTraceDataset:
                 num_walls=num_walls,
                 num_boxes=num_boxes,
             )
+            print(trace.to_dict())
         except AStarCannotSolveTaskException:
             return 0
 
-        try:
-            self.add(trace, is_test=is_test)
-            return 1
-        except pymongo.errors.DuplicateKeyError:
-            return 0
-        except pymongo.errors.DocumentTooLarge:
-            logging.warning(
-                f"Could not store trace with {len(trace.trace)} steps.",
-            )
-            return 0
+        # try:
+        #     self.add(trace, is_test=is_test)
+        #     return 1
+        # except pymongo.errors.DuplicateKeyError:
+        #     return 0
+        # except pymongo.errors.DocumentTooLarge:
+        #     logging.warning(
+        #         f"Could not store trace with {len(trace.trace)} steps.",
+        #     )
+        #     return 0
 
     @property
     def index_list(self) -> List[int]:

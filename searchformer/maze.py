@@ -21,8 +21,6 @@ from typing import (
 )
 
 import click
-import pymongo
-from pymongo.collection import Collection
 
 from .astar import AStarCannotSolveTaskException, AStarState, TraceStep, astar
 from .rollout import (
@@ -38,6 +36,9 @@ from .trace import (
     Tokenizer,
 )
 from .utils import mongodb_client
+
+# import pymongo
+# from pymongo.collection import Collection
 
 
 @dataclass
@@ -336,20 +337,20 @@ class MazeTraceDataset:
 
     def __init__(self, name: str):
         self.name = name
-        self.client = mongodb_client()
-        self.db = self.client[MAZE_DB_NAME]
+        # self.client = mongodb_client()
+        # self.db = self.client[MAZE_DB_NAME]
 
-    @functools.cached_property
-    def trace_collection(self) -> Collection:
-        return self.db[f"{self.name}.trace"]
+    # @functools.cached_property
+    # def trace_collection(self) -> Collection:
+    #     return self.db[f"{self.name}.trace"]
 
-    @functools.cached_property
-    def index_collection(self) -> Collection:
-        return self.db[f"{self.name}.index"]
+    # @functools.cached_property
+    # def index_collection(self) -> Collection:
+    #     return self.db[f"{self.name}.index"]
 
-    def drop(self):
-        self.db.drop_collection(self.trace_collection)
-        self.db.drop_collection(self.index_collection)
+    # def drop(self):
+    #     self.db.drop_collection(self.trace_collection)
+    #     self.db.drop_collection(self.index_collection)
 
     def generate(
         self,
@@ -358,7 +359,7 @@ class MazeTraceDataset:
         height: int,
         deterministic: bool,
         num_attempts: int = 100,
-    ) -> int:
+    ) -> dict:
         """Randomly generate a maze execution trace and return the number of
         generated traces.
 
@@ -408,24 +409,25 @@ class MazeTraceDataset:
                 maze_hash = trace.spec.maze_hash
             if trace_hash not in trace_dict.keys():
                 trace_dict[trace_hash] = trace.to_dict()
+                print(trace.to_dict())
         if len(trace_dict) == 0:
             return 0
         trace_hash_list = list(trace_dict.keys())
-
-        try:
-            self.trace_collection.insert_one(
-                {"_id": maze_hash, "is_test": is_test, "batch": trace_dict}
-            )
-            self.index_collection.insert_one(
-                {
-                    "_id": maze_hash,
-                    "is_test": is_test,
-                    "trace_id_list": trace_hash_list,
-                }
-            )
-            return len(trace_hash_list)
-        except pymongo.errors.DuplicateKeyError:  # type: ignore
-            return 0
+        return trace_dict
+        # try:
+        #     self.trace_collection.insert_one(
+        #         {"_id": maze_hash, "is_test": is_test, "batch": trace_dict}
+        #     )
+        #     self.index_collection.insert_one(
+        #         {
+        #             "_id": maze_hash,
+        #             "is_test": is_test,
+        #             "trace_id_list": trace_hash_list,
+        #         }
+        #     )
+        #     return len(trace_hash_list)
+        # except pymongo.errors.DuplicateKeyError:  # type: ignore
+        #     return 0
 
     @property
     def index_list(self) -> List[int]:
