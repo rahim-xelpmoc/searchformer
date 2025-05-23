@@ -28,10 +28,14 @@ from typing import (
 import click
 import numpy as np
 import pygame
-import pymongo
-from pymongo.collection import Collection
 
-from .astar import AStarCannotSolveTaskException, AStarState, TraceStep, astar
+from .astar import (
+    AStarCannotSolveTaskException,
+    AStarState,
+    TraceStep,
+    astar,
+    astar_verbose,
+)
 from .maze import GridPos, TokGridPos
 from .rollout import (
     Rollout,
@@ -46,6 +50,9 @@ from .trace import (
     Tokenizer,
 )
 from .utils import mongodb_client
+
+# import pymongo
+# from pymongo.collection import Collection
 
 
 class CellState:
@@ -91,7 +98,13 @@ class CellState:
 
 
 class SokobanRenderer:
-    def __init__(self, width: int, height: int, record_dir: Optional[str]=None,assets_dir=""):
+    def __init__(
+        self,
+        width: int,
+        height: int,
+        record_dir: Optional[str] = None,
+        assets_dir="",
+    ):
         """Constructs the PyGame renderer of a Sokoban level.
 
         Args:
@@ -107,7 +120,7 @@ class SokobanRenderer:
 
     @functools.cached_property
     def floor_image(self) -> pygame.Surface:
-        fn = os.path.join(self.assets_dir,"images", "floor.png")
+        fn = os.path.join(self.assets_dir, "images", "floor.png")
         # print(fn)
         assert os.path.exists(
             fn
@@ -116,7 +129,7 @@ class SokobanRenderer:
 
     @functools.cached_property
     def wall_image(self) -> pygame.Surface:
-        fn =os.path.join(self.assets_dir,"images", "wall.png")
+        fn = os.path.join(self.assets_dir, "images", "wall.png")
         assert os.path.exists(
             fn
         ), f"File {fn} not found. Maybe submodules were not initialized."
@@ -124,7 +137,7 @@ class SokobanRenderer:
 
     @functools.cached_property
     def dock_image(self) -> pygame.Surface:
-        fn =os.path.join(self.assets_dir,"images", "dock.png")
+        fn = os.path.join(self.assets_dir, "images", "dock.png")
         assert os.path.exists(
             fn
         ), f"File {fn} not found. Maybe submodules were not initialized."
@@ -132,7 +145,7 @@ class SokobanRenderer:
 
     @functools.cached_property
     def box_image(self) -> pygame.Surface:
-        fn = os.path.join(self.assets_dir,"images", "box.png")
+        fn = os.path.join(self.assets_dir, "images", "box.png")
         assert os.path.exists(
             fn
         ), f"File {fn} not found. Maybe submodules were not initialized."
@@ -140,7 +153,7 @@ class SokobanRenderer:
 
     @functools.cached_property
     def box_on_dock_image(self) -> pygame.Surface:
-        fn = os.path.join(self.assets_dir,"images", "box_docked.png")
+        fn = os.path.join(self.assets_dir, "images", "box_docked.png")
         assert os.path.exists(
             fn
         ), f"File {fn} not found. Maybe submodules were not initialized."
@@ -148,7 +161,7 @@ class SokobanRenderer:
 
     @functools.cached_property
     def worker_on_floor_image(self) -> pygame.Surface:
-        fn = os.path.join(self.assets_dir,"images", "worker.png")
+        fn = os.path.join(self.assets_dir, "images", "worker.png")
         assert os.path.exists(
             fn
         ), f"File {fn} not found. Maybe submodules were not initialized."
@@ -156,7 +169,7 @@ class SokobanRenderer:
 
     @functools.cached_property
     def worker_on_dock_image(self) -> pygame.Surface:
-        fn = os.path.join(self.assets_dir,"images", "worker_dock.png")
+        fn = os.path.join(self.assets_dir, "images", "worker_dock.png")
         assert os.path.exists(
             fn
         ), f"File {fn} not found. Maybe submodules were not initialized."
@@ -184,7 +197,6 @@ class SokobanRenderer:
                     img = self.worker_on_floor_image
                 self.screen.blit(img, (x_pos, y_pos))
                 pygame.display.flip()
-        
 
     def img_to_file(self):
         assert (
@@ -536,6 +548,12 @@ class Sokoban:
         else:
             raise ValueError(f"Invalid action {action}.")
 
+    def final_state_from_path(self, path: str):
+        dir_dict = {"U": "up", "D": "down", "L": "left", "R": "right"}
+        for action in path:
+            self.move(dir_dict[action])
+        return self.state
+
 
 @click.group()
 def main():
@@ -613,6 +631,7 @@ class AStarSokobanState(AStarState):
         self,
         sokoban: Sokoban,
         cost_from_start: float = 0.0,
+        path: str = "",
         parent: Optional["AStarSokobanState"] = None,
         deterministic: bool = True,
     ):
@@ -631,6 +650,8 @@ class AStarSokobanState(AStarState):
         super().__init__(parent, deterministic=deterministic)
         self.sokoban = sokoban
         self._cost_from_start = cost_from_start
+        self.path = path
+        self.dir_dict = {"up": "U", "down": "D", "left": "L", "right": "R"}
 
     @property
     def state(self) -> Dict[str, Any]:
@@ -651,6 +672,7 @@ class AStarSokobanState(AStarState):
             cost_from_start=self.cost_from_start + 1,
             parent=self,
             deterministic=self.deterministic,
+            path=self.path + self.dir_dict[direction],
         )
 
     def _get_children(self) -> List["AStarState"]:
@@ -846,7 +868,9 @@ class SokobanTrace:
             SokobanTrace: Trace object.
         """
         sokoban_start = generate_level(width, height, num_walls, num_boxes)
-        trace = astar(AStarSokobanState(sokoban_start, deterministic=False))
+        trace = astar_verbose(
+            AStarSokobanState(sokoban_start, deterministic=False)
+        )
         return SokobanTrace(sokoban_start, list(trace))
 
     @property

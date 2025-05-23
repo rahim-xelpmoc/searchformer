@@ -1,0 +1,1870 @@
+root state:
+[[4, 3, 2, 1] [] [] ]
+node_id: 0
+cost: 4
+heap: []
+currently min heap is empty. Pushing root state to the heap
+Action: push_heap((4,0))
+observation: done
+Action: push_open(node_id=0)
+observation: done
+initializing search
+selecting the node from the heap with lowest cost
+node_id: 0
+cost: 4
+Action: pop_heap(node_id=0,cost=4)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=0)
+observation: done
+Action: check_goal(node_id=0)
+observation: False
+Action: get_childs(node_id=0)
+observation: [(5, 1), (5, 2)]
+exploring the child nodes
+current child:
+node_id: 1
+cost: 5
+checks:
+Action: check_open(node_id=1)
+observation: False
+Action: check_closed(node_id=1)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=1,cost=5)
+current child:
+node_id: 2
+cost: 5
+checks:
+Action: check_open(node_id=2)
+observation: False
+Action: check_closed(node_id=2)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=2,cost=5)
+selecting the node from the heap with lowest cost
+node_id: 1
+cost: 5
+Action: pop_heap(node_id=1,cost=5)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=1)
+observation: done
+Action: check_goal(node_id=1)
+observation: False
+Action: get_childs(node_id=1)
+observation: [(6, 3), (6, 0), (6, 1)]
+exploring the child nodes
+current child:
+node_id: 3
+cost: 6
+checks:
+Action: check_open(node_id=3)
+observation: False
+Action: check_closed(node_id=3)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=3,cost=6)
+current child:
+node_id: 0
+cost: 6
+checks:
+Action: check_open(node_id=0)
+observation: False
+Action: check_closed(node_id=0)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 1
+cost: 6
+checks:
+Action: check_open(node_id=1)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+selecting the node from the heap with lowest cost
+node_id: 2
+cost: 5
+Action: pop_heap(node_id=2,cost=5)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=2)
+observation: done
+Action: check_goal(node_id=2)
+observation: False
+Action: get_childs(node_id=2)
+observation: [(6, 4), (6, 0), (6, 2)]
+exploring the child nodes
+current child:
+node_id: 4
+cost: 6
+checks:
+Action: check_open(node_id=4)
+observation: False
+Action: check_closed(node_id=4)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=4,cost=6)
+current child:
+node_id: 0
+cost: 6
+checks:
+Action: check_open(node_id=0)
+observation: False
+Action: check_closed(node_id=0)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 2
+cost: 6
+checks:
+Action: check_open(node_id=2)
+observation: False
+Action: check_closed(node_id=2)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 3
+cost: 6
+Action: pop_heap(node_id=3,cost=6)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=3)
+observation: done
+Action: check_goal(node_id=3)
+observation: False
+Action: get_childs(node_id=3)
+observation: [(7, 2), (7, 5), (7, 6)]
+exploring the child nodes
+current child:
+node_id: 2
+cost: 7
+checks:
+Action: check_open(node_id=2)
+observation: False
+Action: check_closed(node_id=2)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 5
+cost: 7
+checks:
+Action: check_open(node_id=5)
+observation: False
+Action: check_closed(node_id=5)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=5,cost=7)
+current child:
+node_id: 6
+cost: 7
+checks:
+Action: check_open(node_id=6)
+observation: False
+Action: check_closed(node_id=6)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=6,cost=7)
+selecting the node from the heap with lowest cost
+node_id: 4
+cost: 6
+Action: pop_heap(node_id=4,cost=6)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=4)
+observation: done
+Action: check_goal(node_id=4)
+observation: False
+Action: get_childs(node_id=4)
+observation: [(7, 7), (7, 8), (7, 1)]
+exploring the child nodes
+current child:
+node_id: 7
+cost: 7
+checks:
+Action: check_open(node_id=7)
+observation: False
+Action: check_closed(node_id=7)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=7,cost=7)
+current child:
+node_id: 8
+cost: 7
+checks:
+Action: check_open(node_id=8)
+observation: False
+Action: check_closed(node_id=8)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=8,cost=7)
+current child:
+node_id: 1
+cost: 7
+checks:
+Action: check_open(node_id=1)
+observation: False
+Action: check_closed(node_id=1)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 5
+cost: 7
+Action: pop_heap(node_id=5,cost=7)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=5)
+observation: done
+Action: check_goal(node_id=5)
+observation: False
+Action: get_childs(node_id=5)
+observation: [(8, 6), (8, 3), (8, 7)]
+exploring the child nodes
+current child:
+node_id: 6
+cost: 8
+checks:
+Action: check_open(node_id=6)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+current child:
+node_id: 3
+cost: 8
+checks:
+Action: check_open(node_id=3)
+observation: False
+Action: check_closed(node_id=3)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 7
+cost: 8
+checks:
+Action: check_open(node_id=7)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+selecting the node from the heap with lowest cost
+node_id: 6
+cost: 7
+Action: pop_heap(node_id=6,cost=7)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=6)
+observation: done
+Action: check_goal(node_id=6)
+observation: False
+Action: get_childs(node_id=6)
+observation: [(8, 9), (8, 7), (8, 4)]
+exploring the child nodes
+current child:
+node_id: 9
+cost: 8
+checks:
+Action: check_open(node_id=9)
+observation: False
+Action: check_closed(node_id=9)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=9,cost=8)
+current child:
+node_id: 7
+cost: 8
+checks:
+Action: check_open(node_id=7)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+current child:
+node_id: 4
+cost: 8
+checks:
+Action: check_open(node_id=4)
+observation: False
+Action: check_closed(node_id=4)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 7
+cost: 7
+Action: pop_heap(node_id=7,cost=7)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=7)
+observation: done
+Action: check_goal(node_id=7)
+observation: False
+Action: get_childs(node_id=7)
+observation: [(8, 10), (8, 5), (8, 3)]
+exploring the child nodes
+current child:
+node_id: 10
+cost: 8
+checks:
+Action: check_open(node_id=10)
+observation: False
+Action: check_closed(node_id=10)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=10,cost=8)
+current child:
+node_id: 5
+cost: 8
+checks:
+Action: check_open(node_id=5)
+observation: False
+Action: check_closed(node_id=5)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 3
+cost: 8
+checks:
+Action: check_open(node_id=3)
+observation: False
+Action: check_closed(node_id=3)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 8
+cost: 7
+Action: pop_heap(node_id=8,cost=7)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=8)
+observation: done
+Action: check_goal(node_id=8)
+observation: False
+Action: get_childs(node_id=8)
+observation: [(8, 4), (8, 8), (8, 5)]
+exploring the child nodes
+current child:
+node_id: 4
+cost: 8
+checks:
+Action: check_open(node_id=4)
+observation: False
+Action: check_closed(node_id=4)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 8
+cost: 8
+checks:
+Action: check_open(node_id=8)
+observation: False
+Action: check_closed(node_id=8)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 5
+cost: 8
+checks:
+Action: check_open(node_id=5)
+observation: False
+Action: check_closed(node_id=5)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 9
+cost: 8
+Action: pop_heap(node_id=9,cost=8)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=9)
+observation: done
+Action: check_goal(node_id=9)
+observation: False
+Action: get_childs(node_id=9)
+observation: [(9, 11), (9, 12), (9, 6)]
+exploring the child nodes
+current child:
+node_id: 11
+cost: 9
+checks:
+Action: check_open(node_id=11)
+observation: False
+Action: check_closed(node_id=11)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=11,cost=9)
+current child:
+node_id: 12
+cost: 9
+checks:
+Action: check_open(node_id=12)
+observation: False
+Action: check_closed(node_id=12)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=12,cost=9)
+current child:
+node_id: 6
+cost: 9
+checks:
+Action: check_open(node_id=6)
+observation: False
+Action: check_closed(node_id=6)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 10
+cost: 8
+Action: pop_heap(node_id=10,cost=8)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=10)
+observation: done
+Action: check_goal(node_id=10)
+observation: False
+Action: get_childs(node_id=10)
+observation: [(9, 8), (9, 13), (9, 14)]
+exploring the child nodes
+current child:
+node_id: 8
+cost: 9
+checks:
+Action: check_open(node_id=8)
+observation: False
+Action: check_closed(node_id=8)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 13
+cost: 9
+checks:
+Action: check_open(node_id=13)
+observation: False
+Action: check_closed(node_id=13)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=13,cost=9)
+current child:
+node_id: 14
+cost: 9
+checks:
+Action: check_open(node_id=14)
+observation: False
+Action: check_closed(node_id=14)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=14,cost=9)
+selecting the node from the heap with lowest cost
+node_id: 11
+cost: 9
+Action: pop_heap(node_id=11,cost=9)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=11)
+observation: done
+Action: check_goal(node_id=11)
+observation: False
+Action: get_childs(node_id=11)
+observation: [(10, 15), (10, 11), (10, 10)]
+exploring the child nodes
+current child:
+node_id: 15
+cost: 10
+checks:
+Action: check_open(node_id=15)
+observation: False
+Action: check_closed(node_id=15)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=15,cost=10)
+current child:
+node_id: 11
+cost: 10
+checks:
+Action: check_open(node_id=11)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+current child:
+node_id: 10
+cost: 10
+checks:
+Action: check_open(node_id=10)
+observation: False
+Action: check_closed(node_id=10)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 12
+cost: 9
+Action: pop_heap(node_id=12,cost=9)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=12)
+observation: done
+Action: check_goal(node_id=12)
+observation: False
+Action: get_childs(node_id=12)
+observation: [(10, 13), (10, 9), (10, 16)]
+exploring the child nodes
+current child:
+node_id: 13
+cost: 10
+checks:
+Action: check_open(node_id=13)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+current child:
+node_id: 9
+cost: 10
+checks:
+Action: check_open(node_id=9)
+observation: False
+Action: check_closed(node_id=9)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 16
+cost: 10
+checks:
+Action: check_open(node_id=16)
+observation: False
+Action: check_closed(node_id=16)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=16,cost=10)
+selecting the node from the heap with lowest cost
+node_id: 13
+cost: 9
+Action: pop_heap(node_id=13,cost=9)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=13)
+observation: done
+Action: check_goal(node_id=13)
+observation: False
+Action: get_childs(node_id=13)
+observation: [(10, 14), (10, 9), (10, 17)]
+exploring the child nodes
+current child:
+node_id: 14
+cost: 10
+checks:
+Action: check_open(node_id=14)
+observation: False
+Action: check_closed(node_id=14)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 9
+cost: 10
+checks:
+Action: check_open(node_id=9)
+observation: False
+Action: check_closed(node_id=9)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 17
+cost: 10
+checks:
+Action: check_open(node_id=17)
+observation: False
+Action: check_closed(node_id=17)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=17,cost=10)
+selecting the node from the heap with lowest cost
+node_id: 14
+cost: 9
+Action: pop_heap(node_id=14,cost=9)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=14)
+observation: done
+Action: check_goal(node_id=14)
+observation: False
+Action: get_childs(node_id=14)
+observation: [(10, 10), (10, 12), (10, 18)]
+exploring the child nodes
+current child:
+node_id: 10
+cost: 10
+checks:
+Action: check_open(node_id=10)
+observation: False
+Action: check_closed(node_id=10)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 12
+cost: 10
+checks:
+Action: check_open(node_id=12)
+observation: False
+Action: check_closed(node_id=12)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 18
+cost: 10
+checks:
+Action: check_open(node_id=18)
+observation: False
+Action: check_closed(node_id=18)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=18,cost=10)
+selecting the node from the heap with lowest cost
+node_id: 15
+cost: 10
+Action: pop_heap(node_id=15,cost=10)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=15)
+observation: done
+Action: check_goal(node_id=15)
+observation: False
+Action: get_childs(node_id=15)
+observation: [(11, 14), (11, 19), (11, 20)]
+exploring the child nodes
+current child:
+node_id: 14
+cost: 11
+checks:
+Action: check_open(node_id=14)
+observation: False
+Action: check_closed(node_id=14)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 19
+cost: 11
+checks:
+Action: check_open(node_id=19)
+observation: False
+Action: check_closed(node_id=19)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=19,cost=11)
+current child:
+node_id: 20
+cost: 11
+checks:
+Action: check_open(node_id=20)
+observation: False
+Action: check_closed(node_id=20)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=20,cost=11)
+selecting the node from the heap with lowest cost
+node_id: 16
+cost: 10
+Action: pop_heap(node_id=16,cost=10)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=16)
+observation: done
+Action: check_goal(node_id=16)
+observation: False
+Action: get_childs(node_id=16)
+observation: [(11, 21), (11, 22), (11, 11)]
+exploring the child nodes
+current child:
+node_id: 21
+cost: 11
+checks:
+Action: check_open(node_id=21)
+observation: False
+Action: check_closed(node_id=21)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=21,cost=11)
+current child:
+node_id: 22
+cost: 11
+checks:
+Action: check_open(node_id=22)
+observation: False
+Action: check_closed(node_id=22)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=22,cost=11)
+current child:
+node_id: 11
+cost: 11
+checks:
+Action: check_open(node_id=11)
+observation: False
+Action: check_closed(node_id=11)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 17
+cost: 10
+Action: pop_heap(node_id=17,cost=10)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=17)
+observation: done
+Action: check_goal(node_id=17)
+observation: False
+Action: get_childs(node_id=17)
+observation: [(11, 12), (11, 23), (11, 24)]
+exploring the child nodes
+current child:
+node_id: 12
+cost: 11
+checks:
+Action: check_open(node_id=12)
+observation: False
+Action: check_closed(node_id=12)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 23
+cost: 11
+checks:
+Action: check_open(node_id=23)
+observation: False
+Action: check_closed(node_id=23)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=23,cost=11)
+current child:
+node_id: 24
+cost: 11
+checks:
+Action: check_open(node_id=24)
+observation: False
+Action: check_closed(node_id=24)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=24,cost=11)
+selecting the node from the heap with lowest cost
+node_id: 18
+cost: 10
+Action: pop_heap(node_id=18,cost=10)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=18)
+observation: done
+Action: check_goal(node_id=18)
+observation: False
+Action: get_childs(node_id=18)
+observation: [(11, 25), (11, 26), (11, 13)]
+exploring the child nodes
+current child:
+node_id: 25
+cost: 11
+checks:
+Action: check_open(node_id=25)
+observation: False
+Action: check_closed(node_id=25)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=25,cost=11)
+current child:
+node_id: 26
+cost: 11
+checks:
+Action: check_open(node_id=26)
+observation: False
+Action: check_closed(node_id=26)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=26,cost=11)
+current child:
+node_id: 13
+cost: 11
+checks:
+Action: check_open(node_id=13)
+observation: False
+Action: check_closed(node_id=13)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 19
+cost: 11
+Action: pop_heap(node_id=19,cost=11)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=19)
+observation: done
+Action: check_goal(node_id=19)
+observation: False
+Action: get_childs(node_id=19)
+observation: [(12, 16), (12, 20), (12, 23)]
+exploring the child nodes
+current child:
+node_id: 16
+cost: 12
+checks:
+Action: check_open(node_id=16)
+observation: False
+Action: check_closed(node_id=16)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 20
+cost: 12
+checks:
+Action: check_open(node_id=20)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+current child:
+node_id: 23
+cost: 12
+checks:
+Action: check_open(node_id=23)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+selecting the node from the heap with lowest cost
+node_id: 20
+cost: 11
+Action: pop_heap(node_id=20,cost=11)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=20)
+observation: done
+Action: check_goal(node_id=20)
+observation: False
+Action: get_childs(node_id=20)
+observation: [(12, 21), (12, 23), (12, 15)]
+exploring the child nodes
+current child:
+node_id: 21
+cost: 12
+checks:
+Action: check_open(node_id=21)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+current child:
+node_id: 23
+cost: 12
+checks:
+Action: check_open(node_id=23)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+current child:
+node_id: 15
+cost: 12
+checks:
+Action: check_open(node_id=15)
+observation: False
+Action: check_closed(node_id=15)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 21
+cost: 11
+Action: pop_heap(node_id=21,cost=11)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=21)
+observation: done
+Action: check_goal(node_id=21)
+observation: False
+Action: get_childs(node_id=21)
+observation: [(12, 26), (12, 19), (12, 16)]
+exploring the child nodes
+current child:
+node_id: 26
+cost: 12
+checks:
+Action: check_open(node_id=26)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+current child:
+node_id: 19
+cost: 12
+checks:
+Action: check_open(node_id=19)
+observation: False
+Action: check_closed(node_id=19)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 16
+cost: 12
+checks:
+Action: check_open(node_id=16)
+observation: False
+Action: check_closed(node_id=16)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 22
+cost: 11
+Action: pop_heap(node_id=22,cost=11)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=22)
+observation: done
+Action: check_goal(node_id=22)
+observation: False
+Action: get_childs(node_id=22)
+observation: [(12, 18), (12, 22), (12, 24)]
+exploring the child nodes
+current child:
+node_id: 18
+cost: 12
+checks:
+Action: check_open(node_id=18)
+observation: False
+Action: check_closed(node_id=18)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 22
+cost: 12
+checks:
+Action: check_open(node_id=22)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+current child:
+node_id: 24
+cost: 12
+checks:
+Action: check_open(node_id=24)
+observation: False
+Action: check_closed(node_id=24)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 23
+cost: 11
+Action: pop_heap(node_id=23,cost=11)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=23)
+observation: done
+Action: check_goal(node_id=23)
+observation: False
+Action: get_childs(node_id=23)
+observation: [(12, 27), (12, 18), (12, 21)]
+exploring the child nodes
+current child:
+node_id: 27
+cost: 12
+checks:
+Action: check_open(node_id=27)
+observation: False
+Action: check_closed(node_id=27)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=27,cost=12)
+current child:
+node_id: 18
+cost: 12
+checks:
+Action: check_open(node_id=18)
+observation: False
+Action: check_closed(node_id=18)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 21
+cost: 12
+checks:
+Action: check_open(node_id=21)
+observation: False
+Action: check_closed(node_id=21)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 24
+cost: 11
+Action: pop_heap(node_id=24,cost=11)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=24)
+observation: done
+Action: check_goal(node_id=24)
+observation: False
+Action: get_childs(node_id=24)
+observation: [(12, 20), (12, 17), (12, 25)]
+exploring the child nodes
+current child:
+node_id: 20
+cost: 12
+checks:
+Action: check_open(node_id=20)
+observation: False
+Action: check_closed(node_id=20)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 17
+cost: 12
+checks:
+Action: check_open(node_id=17)
+observation: False
+Action: check_closed(node_id=17)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 25
+cost: 12
+checks:
+Action: check_open(node_id=25)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+selecting the node from the heap with lowest cost
+node_id: 25
+cost: 11
+Action: pop_heap(node_id=25,cost=11)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=25)
+observation: done
+Action: check_goal(node_id=25)
+observation: False
+Action: get_childs(node_id=25)
+observation: [(12, 24), (12, 15), (12, 19)]
+exploring the child nodes
+current child:
+node_id: 24
+cost: 12
+checks:
+Action: check_open(node_id=24)
+observation: False
+Action: check_closed(node_id=24)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 15
+cost: 12
+checks:
+Action: check_open(node_id=15)
+observation: False
+Action: check_closed(node_id=15)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 19
+cost: 12
+checks:
+Action: check_open(node_id=19)
+observation: False
+Action: check_closed(node_id=19)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 26
+cost: 11
+Action: pop_heap(node_id=26,cost=11)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=26)
+observation: done
+Action: check_goal(node_id=26)
+observation: False
+Action: get_childs(node_id=26)
+observation: [(11, 28), (12, 17), (12, 26)]
+exploring the child nodes
+current child:
+node_id: 28
+cost: 11
+checks:
+Action: check_open(node_id=28)
+observation: False
+Action: check_closed(node_id=28)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=28,cost=11)
+current child:
+node_id: 17
+cost: 12
+checks:
+Action: check_open(node_id=17)
+observation: False
+Action: check_closed(node_id=17)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 26
+cost: 12
+checks:
+Action: check_open(node_id=26)
+observation: False
+Action: check_closed(node_id=26)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 28
+cost: 11
+Action: pop_heap(node_id=28,cost=11)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=28)
+observation: done
+Action: check_goal(node_id=28)
+observation: False
+Action: get_childs(node_id=28)
+observation: [(12, 29), (12, 30), (13, 25)]
+exploring the child nodes
+current child:
+node_id: 29
+cost: 12
+checks:
+Action: check_open(node_id=29)
+observation: False
+Action: check_closed(node_id=29)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=29,cost=12)
+current child:
+node_id: 30
+cost: 12
+checks:
+Action: check_open(node_id=30)
+observation: False
+Action: check_closed(node_id=30)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=30,cost=12)
+current child:
+node_id: 25
+cost: 13
+checks:
+Action: check_open(node_id=25)
+observation: False
+Action: check_closed(node_id=25)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 27
+cost: 12
+Action: pop_heap(node_id=27,cost=12)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=27)
+observation: done
+Action: check_goal(node_id=27)
+observation: False
+Action: get_childs(node_id=27)
+observation: [(13, 22), (13, 31), (13, 32)]
+exploring the child nodes
+current child:
+node_id: 22
+cost: 13
+checks:
+Action: check_open(node_id=22)
+observation: False
+Action: check_closed(node_id=22)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 31
+cost: 13
+checks:
+Action: check_open(node_id=31)
+observation: False
+Action: check_closed(node_id=31)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=31,cost=13)
+current child:
+node_id: 32
+cost: 13
+checks:
+Action: check_open(node_id=32)
+observation: False
+Action: check_closed(node_id=32)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=32,cost=13)
+selecting the node from the heap with lowest cost
+node_id: 29
+cost: 12
+Action: pop_heap(node_id=29,cost=12)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=29)
+observation: done
+Action: check_goal(node_id=29)
+observation: False
+Action: get_childs(node_id=29)
+observation: [(13, 28), (13, 30), (13, 33)]
+exploring the child nodes
+current child:
+node_id: 28
+cost: 13
+checks:
+Action: check_open(node_id=28)
+observation: False
+Action: check_closed(node_id=28)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 30
+cost: 13
+checks:
+Action: check_open(node_id=30)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+current child:
+node_id: 33
+cost: 13
+checks:
+Action: check_open(node_id=33)
+observation: False
+Action: check_closed(node_id=33)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=33,cost=13)
+selecting the node from the heap with lowest cost
+node_id: 30
+cost: 12
+Action: pop_heap(node_id=30,cost=12)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=30)
+observation: done
+Action: check_goal(node_id=30)
+observation: False
+Action: get_childs(node_id=30)
+observation: [(13, 34), (13, 29), (13, 28)]
+exploring the child nodes
+current child:
+node_id: 34
+cost: 13
+checks:
+Action: check_open(node_id=34)
+observation: False
+Action: check_closed(node_id=34)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=34,cost=13)
+current child:
+node_id: 29
+cost: 13
+checks:
+Action: check_open(node_id=29)
+observation: False
+Action: check_closed(node_id=29)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 28
+cost: 13
+checks:
+Action: check_open(node_id=28)
+observation: False
+Action: check_closed(node_id=28)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 31
+cost: 13
+Action: pop_heap(node_id=31,cost=13)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=31)
+observation: done
+Action: check_goal(node_id=31)
+observation: False
+Action: get_childs(node_id=31)
+observation: [(14, 32), (14, 27), (14, 35)]
+exploring the child nodes
+current child:
+node_id: 32
+cost: 14
+checks:
+Action: check_open(node_id=32)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+current child:
+node_id: 27
+cost: 14
+checks:
+Action: check_open(node_id=27)
+observation: False
+Action: check_closed(node_id=27)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 35
+cost: 14
+checks:
+Action: check_open(node_id=35)
+observation: False
+Action: check_closed(node_id=35)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=35,cost=14)
+selecting the node from the heap with lowest cost
+node_id: 32
+cost: 13
+Action: pop_heap(node_id=32,cost=13)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=32)
+observation: done
+Action: check_goal(node_id=32)
+observation: False
+Action: get_childs(node_id=32)
+observation: [(14, 36), (14, 37), (14, 29)]
+exploring the child nodes
+current child:
+node_id: 36
+cost: 14
+checks:
+Action: check_open(node_id=36)
+observation: False
+Action: check_closed(node_id=36)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=36,cost=14)
+current child:
+node_id: 37
+cost: 14
+checks:
+Action: check_open(node_id=37)
+observation: False
+Action: check_closed(node_id=37)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=37,cost=14)
+current child:
+node_id: 29
+cost: 14
+checks:
+Action: check_open(node_id=29)
+observation: False
+Action: check_closed(node_id=29)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 33
+cost: 13
+Action: pop_heap(node_id=33,cost=13)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=33)
+observation: done
+Action: check_goal(node_id=33)
+observation: False
+Action: get_childs(node_id=33)
+observation: [(14, 31), (14, 27), (14, 38)]
+exploring the child nodes
+current child:
+node_id: 31
+cost: 14
+checks:
+Action: check_open(node_id=31)
+observation: False
+Action: check_closed(node_id=31)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 27
+cost: 14
+checks:
+Action: check_open(node_id=27)
+observation: False
+Action: check_closed(node_id=27)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 38
+cost: 14
+checks:
+Action: check_open(node_id=38)
+observation: False
+Action: check_closed(node_id=38)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=38,cost=14)
+selecting the node from the heap with lowest cost
+node_id: 34
+cost: 13
+Action: pop_heap(node_id=34,cost=13)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=34)
+observation: done
+Action: check_goal(node_id=34)
+observation: False
+Action: get_childs(node_id=34)
+observation: [(14, 30), (14, 39), (14, 40)]
+exploring the child nodes
+current child:
+node_id: 30
+cost: 14
+checks:
+Action: check_open(node_id=30)
+observation: False
+Action: check_closed(node_id=30)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 39
+cost: 14
+checks:
+Action: check_open(node_id=39)
+observation: False
+Action: check_closed(node_id=39)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=39,cost=14)
+current child:
+node_id: 40
+cost: 14
+checks:
+Action: check_open(node_id=40)
+observation: False
+Action: check_closed(node_id=40)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=40,cost=14)
+selecting the node from the heap with lowest cost
+node_id: 35
+cost: 14
+Action: pop_heap(node_id=35,cost=14)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=35)
+observation: done
+Action: check_goal(node_id=35)
+observation: False
+Action: get_childs(node_id=35)
+observation: [(15, 41), (15, 42), (15, 31)]
+exploring the child nodes
+current child:
+node_id: 41
+cost: 15
+checks:
+Action: check_open(node_id=41)
+observation: False
+Action: check_closed(node_id=41)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=41,cost=15)
+current child:
+node_id: 42
+cost: 15
+checks:
+Action: check_open(node_id=42)
+observation: False
+Action: check_closed(node_id=42)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=42,cost=15)
+current child:
+node_id: 31
+cost: 15
+checks:
+Action: check_open(node_id=31)
+observation: False
+Action: check_closed(node_id=31)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 36
+cost: 14
+Action: pop_heap(node_id=36,cost=14)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=36)
+observation: done
+Action: check_goal(node_id=36)
+observation: False
+Action: get_childs(node_id=36)
+observation: [(15, 36), (15, 39), (15, 34)]
+exploring the child nodes
+current child:
+node_id: 36
+cost: 15
+checks:
+Action: check_open(node_id=36)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+current child:
+node_id: 39
+cost: 15
+checks:
+Action: check_open(node_id=39)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+current child:
+node_id: 34
+cost: 15
+checks:
+Action: check_open(node_id=34)
+observation: False
+Action: check_closed(node_id=34)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 37
+cost: 14
+Action: pop_heap(node_id=37,cost=14)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=37)
+observation: done
+Action: check_goal(node_id=37)
+observation: False
+Action: get_childs(node_id=37)
+observation: [(15, 32), (15, 43), (15, 44)]
+exploring the child nodes
+current child:
+node_id: 32
+cost: 15
+checks:
+Action: check_open(node_id=32)
+observation: False
+Action: check_closed(node_id=32)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 43
+cost: 15
+checks:
+Action: check_open(node_id=43)
+observation: False
+Action: check_closed(node_id=43)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=43,cost=15)
+current child:
+node_id: 44
+cost: 15
+checks:
+Action: check_open(node_id=44)
+observation: False
+Action: check_closed(node_id=44)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=44,cost=15)
+selecting the node from the heap with lowest cost
+node_id: 38
+cost: 14
+Action: pop_heap(node_id=38,cost=14)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=38)
+observation: done
+Action: check_goal(node_id=38)
+observation: False
+Action: get_childs(node_id=38)
+observation: [(15, 33), (15, 37), (15, 40)]
+exploring the child nodes
+current child:
+node_id: 33
+cost: 15
+checks:
+Action: check_open(node_id=33)
+observation: False
+Action: check_closed(node_id=33)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 37
+cost: 15
+checks:
+Action: check_open(node_id=37)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+current child:
+node_id: 40
+cost: 15
+checks:
+Action: check_open(node_id=40)
+observation: False
+Action: check_closed(node_id=40)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 39
+cost: 14
+Action: pop_heap(node_id=39,cost=14)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=39)
+observation: done
+Action: check_goal(node_id=39)
+observation: False
+Action: get_childs(node_id=39)
+observation: [(15, 40), (15, 34), (14, 45)]
+exploring the child nodes
+current child:
+node_id: 40
+cost: 15
+checks:
+Action: check_open(node_id=40)
+observation: False
+Action: check_closed(node_id=40)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 34
+cost: 15
+checks:
+Action: check_open(node_id=34)
+observation: False
+Action: check_closed(node_id=34)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 45
+cost: 14
+checks:
+Action: check_open(node_id=45)
+observation: False
+Action: check_closed(node_id=45)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=45,cost=14)
+selecting the node from the heap with lowest cost
+node_id: 40
+cost: 14
+Action: pop_heap(node_id=40,cost=14)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=40)
+observation: done
+Action: check_goal(node_id=40)
+observation: False
+Action: get_childs(node_id=40)
+observation: [(15, 46), (15, 47), (16, 39)]
+exploring the child nodes
+current child:
+node_id: 46
+cost: 15
+checks:
+Action: check_open(node_id=46)
+observation: False
+Action: check_closed(node_id=46)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=46,cost=15)
+current child:
+node_id: 47
+cost: 15
+checks:
+Action: check_open(node_id=47)
+observation: False
+Action: check_closed(node_id=47)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=47,cost=15)
+current child:
+node_id: 39
+cost: 16
+checks:
+Action: check_open(node_id=39)
+observation: False
+Action: check_closed(node_id=39)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 45
+cost: 14
+Action: pop_heap(node_id=45,cost=14)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=45)
+observation: done
+Action: check_goal(node_id=45)
+observation: False
+Action: get_childs(node_id=45)
+observation: [(15, 48), (15, 33), (15, 36)]
+exploring the child nodes
+current child:
+node_id: 48
+cost: 15
+checks:
+Action: check_open(node_id=48)
+observation: False
+Action: check_closed(node_id=48)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=48,cost=15)
+current child:
+node_id: 33
+cost: 15
+checks:
+Action: check_open(node_id=33)
+observation: False
+Action: check_closed(node_id=33)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 36
+cost: 15
+checks:
+Action: check_open(node_id=36)
+observation: False
+Action: check_closed(node_id=36)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 41
+cost: 15
+Action: pop_heap(node_id=41,cost=15)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=41)
+observation: done
+Action: check_goal(node_id=41)
+observation: False
+Action: get_childs(node_id=41)
+observation: [(15, 49), (16, 45), (16, 47)]
+exploring the child nodes
+current child:
+node_id: 49
+cost: 15
+checks:
+Action: check_open(node_id=49)
+observation: False
+Action: check_closed(node_id=49)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=49,cost=15)
+current child:
+node_id: 45
+cost: 16
+checks:
+Action: check_open(node_id=45)
+observation: False
+Action: check_closed(node_id=45)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 47
+cost: 16
+checks:
+Action: check_open(node_id=47)
+observation: True
+the cost of the child in open_dict is less than the child itself so continuing.
+selecting the node from the heap with lowest cost
+node_id: 42
+cost: 15
+Action: pop_heap(node_id=42,cost=15)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=42)
+observation: done
+Action: check_goal(node_id=42)
+observation: False
+Action: get_childs(node_id=42)
+observation: [(16, 50), (16, 45), (16, 46)]
+exploring the child nodes
+current child:
+node_id: 50
+cost: 16
+checks:
+Action: check_open(node_id=50)
+observation: False
+Action: check_closed(node_id=50)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=50,cost=16)
+current child:
+node_id: 45
+cost: 16
+checks:
+Action: check_open(node_id=45)
+observation: False
+Action: check_closed(node_id=45)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 46
+cost: 16
+checks:
+Action: check_open(node_id=46)
+observation: False
+Action: check_closed(node_id=46)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 43
+cost: 15
+Action: pop_heap(node_id=43,cost=15)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=43)
+observation: done
+Action: check_goal(node_id=43)
+observation: False
+Action: get_childs(node_id=43)
+observation: [(16, 37), (16, 51), (16, 52)]
+exploring the child nodes
+current child:
+node_id: 37
+cost: 16
+checks:
+Action: check_open(node_id=37)
+observation: False
+Action: check_closed(node_id=37)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+current child:
+node_id: 51
+cost: 16
+checks:
+Action: check_open(node_id=51)
+observation: False
+Action: check_closed(node_id=51)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=51,cost=16)
+current child:
+node_id: 52
+cost: 16
+checks:
+Action: check_open(node_id=52)
+observation: False
+Action: check_closed(node_id=52)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=52,cost=16)
+selecting the node from the heap with lowest cost
+node_id: 44
+cost: 15
+Action: pop_heap(node_id=44,cost=15)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=44)
+observation: done
+Action: check_goal(node_id=44)
+observation: False
+Action: get_childs(node_id=44)
+observation: [(16, 53), (15, 54), (17, 46)]
+exploring the child nodes
+current child:
+node_id: 53
+cost: 16
+checks:
+Action: check_open(node_id=53)
+observation: False
+Action: check_closed(node_id=53)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=53,cost=16)
+current child:
+node_id: 54
+cost: 15
+checks:
+Action: check_open(node_id=54)
+observation: False
+Action: check_closed(node_id=54)
+observation: False
+adding child node to the heap
+Action: push_heap(node_id=54,cost=15)
+current child:
+node_id: 46
+cost: 17
+checks:
+Action: check_open(node_id=46)
+observation: False
+Action: check_closed(node_id=46)
+observation: True
+the cost of the child in closed_dict is less than the child itself so continuing
+selecting the node from the heap with lowest cost
+node_id: 46
+cost: 15
+Action: pop_heap(node_id=46,cost=15)
+observation: done
+pushing node to the closed list
+Action: push_closed(node_id=46)
+observation: done
+Action: check_goal(node_id=46)
+observation: True
+current node is the goal
+goal reached
