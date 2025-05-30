@@ -359,6 +359,7 @@ class MazeTraceDataset:
         height: int,
         deterministic: bool,
         num_attempts: int = 100,
+        seed=0,
     ) -> dict:
         """Randomly generate a maze execution trace and return the number of
         generated traces.
@@ -376,6 +377,7 @@ class MazeTraceDataset:
         Returns:
             int: Number of unique maze planning tasks that were generated.
         """
+        random.seed(seed)
         indices = list(range(width * height))
         random.shuffle(indices)
         num_walls = random.randint(
